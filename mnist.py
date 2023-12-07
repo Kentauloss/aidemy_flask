@@ -23,7 +23,7 @@ def allowed_file(filename):
     #取り出した1番目の要素を小文字に変換し、ALLOWED_EXTENSIONSのどれかに該当するかどうか
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-model = load_model('./model.h5')#学習済みモデルをロード
+model = load_model('./model.h5', compile=False)#学習済みモデルをロード
 
 
 @app.route('/', methods=['GET', 'POST'])
