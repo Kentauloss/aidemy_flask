@@ -34,7 +34,7 @@ def upload_file():
             return redirect(request.url)
         file = request.files['file']
         if file.filename == '':
-            flash('ファイルがありません2')
+            flash('ファイルがありません')
             return redirect(request.url)
         if file and allowed_file(file.filename):
             #flash(request.url) #flashの確認のため故意にrequest.urlを表示
