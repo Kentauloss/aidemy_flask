@@ -29,7 +29,7 @@ model = load_model('./model.h5')#学習済みモデルをロード
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
-        if 'file' in request.files:
+        if 'file' not in request.files:
             flash('ファイルがありません')
             return redirect(request.url)
         file = request.files['file']
