@@ -53,6 +53,9 @@ def upload_file():
             pred_answer = "これは " + classes[predicted] + " です"
 
             return render_template("index.html",answer=pred_answer)
+        else :
+            flash('選択されたファイルは画像ではありません')
+            return redirect(request.url)            
 
     #POSTリクエストがなされないとき（単にURLにアクセスしたとき）
     return render_template("index.html",answer="")
